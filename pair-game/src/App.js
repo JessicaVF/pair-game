@@ -1,6 +1,6 @@
 import './App.css';
 import Button from 'react-bootstrap/Button';
-import FlipCards from "./flip-cards"
+import FlipCards from "./Flip-cards/Flip-cards"
 
 function App() {
   return (
