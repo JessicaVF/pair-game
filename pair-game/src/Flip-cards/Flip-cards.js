@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
 
-function flipCards() {
+const flipCards = (props) => {
   return (
     <div>
         <Card style={{ width: '18rem' }}>
