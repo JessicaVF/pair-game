@@ -1,8 +1,19 @@
+import React, { Component } from 'react'; 
 import './App.css';
 import Button from 'react-bootstrap/Button';
 import FlipCards from "./Flip-cards/Flip-cards"
 
-function App() {
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      photos: [],
+      flipCardNums: [],
+    };
+  } 
+
+  
+  render(){
   return (
     <div className="App">
       <header className="App-header">
@@ -11,7 +22,7 @@ function App() {
         <Button variant="danger">BT Button</Button>
       </header>
     </div>
-  );
+  )};
 }
 
 export default App;
