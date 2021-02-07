@@ -2,18 +2,16 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 
 const flipCards = (props) => {
+  const results = props.value;
+  let returnedResults;
+  if (results.length>0){
+    returnedResults = 
+       <img src={results[0].download_url} alt="hi"/>
+      }
+       
   return (
     <div>
-        <Card style={{ width: '18rem' }}>
-        <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-            <Card.Text style={{ color: 'red' }}>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
-            </Card.Text>
-        </Card.Body>
-        </Card>
+       {returnedResults}
     </div>
   )};
 

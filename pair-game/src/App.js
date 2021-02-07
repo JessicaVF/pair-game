@@ -1,7 +1,10 @@
 import React, { Component } from 'react'; 
 import './App.css';
+
+import FlipCards from "./Flip-cards/Flip-cards";
+import axios from 'axios';
+
 import Button from 'react-bootstrap/Button';
-import FlipCards from "./Flip-cards/Flip-cards"
 
 class App extends Component {
   constructor() {
@@ -10,15 +13,32 @@ class App extends Component {
       photos: [],
       flipCardNums: [],
     };
-  } 
+  }
 
+  //Life Cycle Methode
+  componentDidMount() {
+    this.performSearch();
+    }
+
+  performSearch = () => {
+    axios.get(`https://picsum.photos/v2/list?page=2&limit=4`)
+  .then(response => {
+    this.setState({
+      photos: response.data,
+      loading: false,
+    });
+  })
+     .catch(error => {
+     console.log('Error fetching and parsing data', error);
+     });
+  }
   
   render(){
   return (
     <div className="App">
       <header className="App-header">
         <h1>pair-game</h1>
-        <FlipCards></FlipCards>
+        <FlipCards value={this.state.photos}></FlipCards>
         <Button variant="danger">BT Button</Button>
       </header>
     </div>
