@@ -1,12 +1,11 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card'
 
 const flipCards = (props) => {
   const results = props.value;
   let returnedResults;
   if (results.length>0){
     returnedResults = 
-       <img src={results[0].download_url} alt="hi"/>
+       <img src={results[3].download_url} alt="hi"/>
       }
        
   return (
