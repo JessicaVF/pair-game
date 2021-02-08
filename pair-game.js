@@ -22,10 +22,11 @@ function shuffle(a) {
 tdClickArea.forEach(item => {
     item.addEventListener('click', e => {
         let btnArea = e.target;
-
+        let z = btnArea.cellIndex;
+        console.log("c index is: " + z);
         //let indexTD;
 
-        btnArea.innerHTML = cartes[];
+        btnArea.innerHTML = cartes[z];
         //changeTurn();
     })
 });
