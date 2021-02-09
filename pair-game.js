@@ -1,12 +1,12 @@
 const tdClickArea = document.querySelectorAll("td");
 let p1 = [];
 let p2 = [];
-let cartes = ["1", "1", "2", "2", "3", "3", "4", "4"];
-cartes = shuffle(cartes);
+//let cartes = ["1", "1", "2", "2", "3", "3", "4", "4"];
+//cartes = shuffle(cartes);
 let p1turn = true;
 let p2turn = false;
 
-//dummy system to test: 
+//dummy system to test things: 
 let cartas = [["1", "1", "2", "2"], ["3", "3", "4", "4"]];
 cartas = [shuffle(cartas[0]), shuffle(cartas[1])];
 console.log(cartas);
