@@ -1,9 +1,11 @@
 <br>
 <!-- logo -->
-<div>
+<div *ngIf="!flipCard" (click)="flipCard = !flipCard">
   <img src="../../assets/images/logo.png" alt="">
 </div>
-<div>
+
+<!-- character image -->
+<div *ngIf="flipCard" (click)="flipCard = !flipCard">
   <img src="../../assets/images/{{lotrCharacter.urlName}}" alt="">
 </div>
 <br>

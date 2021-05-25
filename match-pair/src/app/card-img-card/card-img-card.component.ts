@@ -7,7 +7,7 @@ import { imgLotr } from '../model/img.model';
   styleUrls: ['./card-img-card.component.scss']
 })
 export class CardImgCardComponent implements OnInit {
-
+flipCard = false
   @Input() lotrCharacter = new imgLotr("saklndalkshflkahf")
 
   constructor() { }
