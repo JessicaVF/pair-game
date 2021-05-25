@@ -22,15 +22,33 @@ function shuffle(a) {
     }
     return a;
 }
-
+var temp = ""
+var tempTwo = ""
 tdClickArea.forEach(item => {
     item.addEventListener('click', e => {
         let btnArea = e.target;
         let indexCell = btnArea.cellIndex;
         let indexRow = btnArea.parentElement.rowIndex;
-        console.log(indexCell);
-        console.log(indexRow);
         btnArea.innerHTML = cartas[indexRow][indexCell];
+        if (temp == "") {
+            temp = btnArea.innerHTML
+        }
+        else {
+            tempTwo = btnArea.innerHTML;
+            if (temp == tempTwo) {
+                console.log("pair!");
+                temp = "";
+                tempTwo = ""
+                btnArea.innerHTML = "";
+            }
+            else {
+                console.log("pas pair!");
+                temp = "";
+                tempTwo = ""
+                btnArea.innerHTML = "";
+            }
+        }
+
         //changeTurn();
     })
 });
