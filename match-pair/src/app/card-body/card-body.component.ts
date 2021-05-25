@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LotrImagesService } from '../lotr-images.service';
+import { imgLotr } from '../model/img.model';
 
 @Component({
   selector: 'app-card-body',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardBodyComponent implements OnInit {
 
-  constructor() { }
-
+  constructor( private imageServ: LotrImagesService) { }
+  bodyImageTbl: imgLotr[] = [];
   ngOnInit(): void {
+    this.bodyImageTbl = this.imageServ.imageTbl;
   }
 
 }

@@ -15,9 +15,9 @@ export class LotrImagesService {
     new imgLotr( "lotr_human.jpg"),
     new imgLotr( "lotr_king.jpg"),
     new imgLotr( "lotr_wizard.jpg"),
-    new imgLotr( "lotr_hobbit1-sw.jpg"),
-    new imgLotr( "lotr_hobbit2-fb.jpg"),
-    new imgLotr( "lotr_hobbit3.jpg"),
-    new imgLotr( "lotr_hobbit4.jpg"),
+    new imgLotr( "lotr-hobbit1-sw.jpg"),
+    new imgLotr( "lotr-hobbit2-fb.jpg"),
+    new imgLotr( "lotr-hobbit3.jpg"),
+    new imgLotr( "lotr-hobbit4.jpg"),
   ]
 }

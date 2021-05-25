@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { imgLotr } from '../model/img.model';
 
 @Component({
   selector: 'app-card-img-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-img-card.component.scss']
 })
 export class CardImgCardComponent implements OnInit {
+
+  @Input() lotrCharacter = new imgLotr("saklndalkshflkahf")
 
   constructor() { }
 
