@@ -11,14 +11,14 @@ export class CardBodyComponent implements OnInit {
 
   constructor( private imageServ: LotrImagesService) { }
   cardSet: imgLotr[] = [];
-  cardSet2: imgLotr[] = [];
 
   ngOnInit(): void {
+
     this.cardSet = this.imageServ.imageTbl;
-    this.cardSet = this.shuffle(this.cardSet);
-    console.log(this.cardSet)
-    this.cardSet2 = this.shuffle(this.cardSet)
-    console.log(this.cardSet2)
+    this.cardSet = this.shuffle(this.cardSet.concat(this.cardSet));
+
+
+
   }
   shuffle(gameBoard: imgLotr[]):imgLotr[] {
     let j, x, i;
