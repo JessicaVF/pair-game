@@ -9,10 +9,13 @@ import { imgLotr } from '../model/img.model';
 export class CardImgCardComponent implements OnInit {
 flipCard = false
   @Input() lotrCharacter = new imgLotr("saklndalkshflkahf")
+  //@Input() myIndex: number = 1;
 
   constructor() { }
 
   ngOnInit(): void {
+    // console.log(this.lotrCharacter);
+
   }
 
 }
