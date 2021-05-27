@@ -14,14 +14,9 @@ flipCard = false
   constructor() { }
 
   ngOnInit(): void {
-<<<<<<< HEAD
-    // console.log(this.lotrCharacter);
-
-=======
     if(!this.flipCard){
       console.log(this.lotrCharacter.urlName);
     }
->>>>>>> 72fee1d6f7502512ff4d597e1f3e72b3034920a1
   }
 
 }
