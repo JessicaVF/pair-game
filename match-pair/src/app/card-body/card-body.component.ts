@@ -10,18 +10,20 @@ import { imgLotr } from '../model/img.model';
 export class CardBodyComponent implements OnInit {
 
   constructor( private imageServ: LotrImagesService) { }
-  bodyImageTbl: imgLotr[] = [];
+  cardSet: imgLotr[] = [];
+
   ngOnInit(): void {
-    this.bodyImageTbl = this.imageServ.imageTbl;
-    this.bodyImageTbl = this.shuffle(this.bodyImageTbl);
+
+    this.cardSet = this.imageServ.imageTbl;
+    this.cardSet = this.shuffle(this.cardSet.concat(this.cardSet));
   }
   shuffle(gameBoard: imgLotr[]):imgLotr[] {
-    let j, x, i;
+    let cardOne, cardTwo, i;
     for (i = gameBoard.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = gameBoard[i];
-        gameBoard[i] = gameBoard[j];
-        gameBoard[j] = x;
+        cardOne = Math.floor(Math.random() * (i + 1));
+        cardTwo = gameBoard[i];
+        gameBoard[i] = gameBoard[cardOne];
+        gameBoard[cardOne] = cardTwo;
     }
     return gameBoard;
 }
