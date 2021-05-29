@@ -1,5 +1,7 @@
 export class imgLotr{
-  constructor( public urlName: string){
+  constructor(
+    public picId: number,
+    public urlName: string){
 
   }
 }

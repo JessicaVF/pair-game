@@ -8,7 +8,7 @@ import { imgLotr } from '../model/img.model';
 })
 export class CardImgCardComponent implements OnInit {
 flipCard = false
-  @Input() lotrCharacter = new imgLotr("saklndalkshflkahf")
+  @Input() lotrCharacter = new imgLotr(200, "saklndalkshflkahf")
   //@Input() myIndex: number = 1;
 
   constructor() { }
