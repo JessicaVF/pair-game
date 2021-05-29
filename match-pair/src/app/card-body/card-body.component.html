@@ -1,4 +1,9 @@
 <div class="d-flex flex-row flex-wrap">
 
-  <app-card-img-card *ngFor="let pic of cardSet" [lotrCharacter]="pic"></app-card-img-card>
+  <app-card-img-card
+  *ngFor="let pic of cardSet; let i =index"
+  [cardnumber]="i";
+  [lotrCharacter]="pic"
+  (evt)="recieveChildInformation($event)"
+  ></app-card-img-card>
 </div>

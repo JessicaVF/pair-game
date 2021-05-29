@@ -8,7 +8,7 @@ import { imgLotr } from '../model/img.model';
   styleUrls: ['./card-body.component.scss']
 })
 export class CardBodyComponent implements OnInit {
-
+  cardNumber = 0;
   constructor( private imageServ: LotrImagesService) { }
   cardSet: imgLotr[] = [];
 
@@ -26,5 +26,11 @@ export class CardBodyComponent implements OnInit {
         gameBoard[cardOne] = cardTwo;
     }
     return gameBoard;
+}
+
+
+//peter logic
+recieveChildInformation($event:imgLotr){
+  console.log($event);
 }
 }

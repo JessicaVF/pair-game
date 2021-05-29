@@ -1,22 +1,11 @@
 
 <br>
-  <div class="padding" (click)="toggleIsOpen()">
-    <!-- logo -->
-    <div class="my-container " [ngClass]="{
-        'fadeout': isSeen,
-        'fadein': !isSeen
-    }">
-    <img src="../../assets/images/logo.png" alt="lotr logo">
+  <div class=" p-3 fadein" (click)="flipFunction()">
+    <div class="my-card fadein" *ngIf="!isFlipped">
+      <img src="../../assets/images/logo.png" alt="lotr logo">
     </div>
-
-    <!-- LOTR character -->
-    <div
-    class="my-container"
-    [ngClass]="{
-      'fadeout': !isSeen,
-      'fadein': isSeen
-    }">
-      <img src="../../assets/images/{{lotrCharacter.urlName}}" alt="">
+    <div class="my-card fadein" *ngIf="isFlipped">
+      <img src="../../assets/images/{{lotrCharacter.urlName}}" alt="character photo">
     </div>
   </div>
 <br>
