@@ -24,24 +24,44 @@ import { imgLotr } from '../model/img.model';
   styleUrls: ['./card-img-card.component.scss']
 })
 export class CardImgCardComponent implements OnInit {
-  isFlipped=false;
+  isFlipped = false;
+  @Input() canFlip: boolean = true;
   @Input() lotrCharacter = new imgLotr(200, "saklndalkshflkahf", "default")
-  @Input() cardnumber = 0;
+  @Input()  cardnumber = 0;
   @Output() evt = new EventEmitter<imgLotr>();
+  @Output() theUrl = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
     this.lotrCharacter.picId = this.cardnumber;
   }
 
-  flipFunction(){
+//   flipFunction(){
+//     this.isFlipped = !this.isFlipped;
+
+//     if(this.lotrCharacter.state === "default"){
+//       this.lotrCharacter.state = "flipped";
+//       console.log(this.lotrCharacter.urlName);
+//       this.theUrl.emit(this.lotrCharacter.urlName);
+//     }else if (this.lotrCharacter.state === "flipped") {
+//       this.lotrCharacter.state = "default";
+//     }
+//     this.evt.emit(this.lotrCharacter);
+//   }
+
+// }
+flipFunction(){
+
+  if (this.canFlip){
     this.isFlipped = !this.isFlipped;
-    if(this.lotrCharacter.state === "default"){
-      this.lotrCharacter.state = "flipped";
-    }else if (this.lotrCharacter.state === "flipped") {
-      this.lotrCharacter.state = "default";
-    }
-    this.evt.emit(this.lotrCharacter);
+    this.theUrl.emit(this.lotrCharacter.urlName);
   }
+  else{
+    console.log("flip another card");
+  }
+
+
+
+}
 
 }
